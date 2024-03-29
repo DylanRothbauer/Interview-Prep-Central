@@ -12,9 +12,9 @@ This repository is organized into folders to help you navigate and find the reso
 - LeetCode: Includes a wide range of problems from LeetCode.
 - AlgoExpert: Features problems and solutions from the AlgoExpert platform, covering a variety of topics.
 - Competitions: Contains problems from coding competitions such as icpc and more.
-- Other Resources: Includes additional resources, such as articles, videos, and cheat sheets, to supplement your preparation.
 - CodeChef: Includes problems and solutions from CodeChef, a competitive programming platform known for its contests and practice problems.
 - HackerRank: Features problems and solutions from HackerRank, a platform for practicing coding challenges and competitions.
+- Other Resources: Includes additional resources, such as articles, videos, and cheat sheets, to supplement your preparation.
 ## Getting Started
 To get started with this repository, simply clone or download the repository to your local machine. Each folder contains detailed README files with instructions on how to use the resources effectively. Feel free to explore, practice, and improve your coding skills as you work through the problems and resources provided.
 
