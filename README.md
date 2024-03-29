@@ -1,9 +1,6 @@
-# Interview-Prep-Central
-My personal technical interview preparation repository. The next few years, I will gather a collection of problems and resources to enhance my coding skills and prepare for technical interviews.
-
 # Technical Interview Preparation Repository
 ## Overview
-Welcome to my technical interview preparation repository! This repository is designed to help me prepare for software engineering technical interviews by providing a broad collection of problems and resources from various sources. Whether you're new to coding interviews or looking to refine your skills, this repository aims to support your journey with organized and structured content.
+Welcome to my technical interview preparation repository! This repository is designed to help me prepare for software engineering technical interviews by providing a broad collection of problems and resources from various sources. The next few years, I will gather a collection of problems and resources to enhance my coding skills and prepare for technical interviews. Whether you're new to coding interviews or looking to refine your skills, this repository aims to support your journey with organized and structured content.
 
 ## Repository Structure
 This repository is organized into folders to help you navigate and find the resources you need:
