@@ -8,9 +8,10 @@ This repository is organized into folders to help you navigate and find the reso
 - Cracking the Coding Interview: Contains problems and solutions from the book "Cracking the Coding Interview" by Gayle Laakmann McDowell.
 - LeetCode: Includes a wide range of problems from LeetCode.
 - AlgoExpert: Features problems and solutions from the AlgoExpert platform, covering a variety of topics.
-- Competitions: Contains problems from coding competitions such as icpc and more.
+- Competitions: Contains problems from coding competitions such as icpc and more, along with my solutions.
 - CodeChef: Includes problems and solutions from CodeChef, a competitive programming platform known for its contests and practice problems.
 - HackerRank: Features problems and solutions from HackerRank, a platform for practicing coding challenges and competitions.
+- Naukri (Code360): Features problems from Naukri by codingninjas. Includes problems, resources, interview prep, and solutions. 
 - Other Resources: Includes additional resources, such as articles, videos, and cheat sheets, to supplement your preparation.
 ## Getting Started
 To get started with this repository, simply clone or download the repository to your local machine. Each folder contains detailed README files with instructions on how to use the resources effectively. Feel free to explore, practice, and improve your coding skills as you work through the problems and resources provided.
