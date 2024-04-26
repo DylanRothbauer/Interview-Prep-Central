@@ -32,7 +32,7 @@ void allPairsShortestPath(int arr[4][4]) {
 }
 
 int main() {
-	int arr[4][4] = { {0,1,5,INF}, // example from class
+	int arr[4][4] = { {0,1,5,INF}, // example from notes
 					{INF,0,2,INF},
 					{INF,2,0,3},
 					{INF,INF,INF,0}
