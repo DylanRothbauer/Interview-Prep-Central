@@ -38,7 +38,7 @@ int main() {
 					{INF,INF,INF,0}
 	};
 
-	allPairsShortestPath(arr); // Floyd Warshall
+	allPairsShortestPath(arr); // Floyd Warshall Algorithm
 	printMatrix(arr);
 
 	return 0;
