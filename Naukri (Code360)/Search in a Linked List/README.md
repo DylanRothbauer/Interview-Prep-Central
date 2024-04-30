@@ -7,7 +7,14 @@ A sample Linked List:
 Now you have been given an integer value, 'K'. Your task is to check whether a node with a value equal to 'K' exists in the given linked list. Return 1 if node exists else return 0.
 
 ## Detailed explanation (Input/output format, Notes, Images)
-
+### Input format:
+The first line of the input contains space-separated integers denoting the values of nodes of the Linked List.  
+The Linked List is terminated with -1. Hence, -1 is never a node value of the Linked List.  
+The second line contains a single integer 'K', which is desired to be checked in the Linked List.  
+### Output format:
+The only line contains 1 if the desired value 'K' exists in the Linked List, otherwise, print 0.  
+**Note**:  
+You do not need to print anything; it has already been handled. Just implement the given function.
 
 ## Sample Input 1:
 3 6 2 7 9 -1  
@@ -35,6 +42,7 @@ Try solving this in O(L).
 ## Constraints:
 1 <= 'L' <= 10^5  
 1 <= 'data' <= 10^9 and 'data' != -1  
-1 <= 'K' <= 10^9  
+1 <= 'K' <= 10^9    
+
 Where 'L' represents the total number of nodes in the Linked List, 'data' represents the value at each node, and 'K' is the given integer.  
 Time Limit: 1 sec.
