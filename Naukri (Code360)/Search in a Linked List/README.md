@@ -1,13 +1,8 @@
 # Problem statement
 You are given a Singly Linked List of integers with a head pointer. Every node of the Linked List has a value written on it.  
 
-A sample Linked List:
-
-LINKEDLIST_1
-
-![GitHub Logo](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/main/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.jpg "")
-
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+A sample Linked List:  
+![Sample 1](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/abc3a58eea97523d02a0198147f1ac43f7cc573e/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.png)
 
 Now you have been given an integer value, 'K'. Your task is to check whether a node with a value equal to 'K' exists in the given linked list. Return 1 if node exists else return 0.
 
@@ -21,8 +16,8 @@ Now you have been given an integer value, 'K'. Your task is to check whether a n
 1
 
 ## Explanation for Sample Input 1:
-As value 2 exists in the given linked list. So we will return 1 in this case.
-LINKEDLIST_2
+As value 2 exists in the given linked list. So we will return 1 in this case.  
+![Sample 2](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/abc3a58eea97523d02a0198147f1ac43f7cc573e/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.png)
 
 ## Sample Input 2:
 1 2 3 7 -1  
@@ -31,8 +26,8 @@ LINKEDLIST_2
 1
 
 ## Explanation for Sample Input 2:
-As the value 7 exists in the Linked List, our answer is 1.
-LINKEDLIST_3
+As the value 7 exists in the Linked List, our answer is 1.  
+![Sample 3](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/abc3a58eea97523d02a0198147f1ac43f7cc573e/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.png)
 
 **Expected Time Complexity**:  
 Try solving this in O(L).
