@@ -6,6 +6,8 @@ A sample Linked List:
 LINKEDLIST_1
 
 
+
+
 Now you have been given an integer value, 'K'. Your task is to check whether a node with a value equal to 'K' exists in the given linked list. Return 1 if node exists else return 0.
 
 ## Detailed explanation (Input/output format, Notes, Images)
