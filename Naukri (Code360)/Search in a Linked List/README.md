@@ -5,8 +5,9 @@ A sample Linked List:
 
 LINKEDLIST_1
 
+![GitHub Logo](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/main/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.jpg "")
 
-
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 Now you have been given an integer value, 'K'. Your task is to check whether a node with a value equal to 'K' exists in the given linked list. Return 1 if node exists else return 0.
 
