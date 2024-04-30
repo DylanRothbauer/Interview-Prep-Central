@@ -27,7 +27,7 @@ As value 2 exists in the given linked list. So we will return 1 in this case.
 
 ## Explanation for Sample Input 2:
 As the value 7 exists in the Linked List, our answer is 1.  
-![Sample 3](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/abc3a58eea97523d02a0198147f1ac43f7cc573e/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.png)
+![Sample 3](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/87d0d19fac4cb5eb8bc580d3996c77d53d439daf/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_3.png)
 
 **Expected Time Complexity**:  
 Try solving this in O(L).
