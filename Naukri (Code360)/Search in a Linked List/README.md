@@ -17,7 +17,7 @@ Now you have been given an integer value, 'K'. Your task is to check whether a n
 
 ## Explanation for Sample Input 1:
 As value 2 exists in the given linked list. So we will return 1 in this case.  
-![Sample 2](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/abc3a58eea97523d02a0198147f1ac43f7cc573e/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_1.png)
+![Sample 2](https://github.com/DylanRothbauer/Interview-Prep-Central/blob/42bb35592c5228aabd949e3cbb0e1539ac988fc8/Naukri%20(Code360)/Search%20in%20a%20Linked%20List/LinkedList_2.png)
 
 ## Sample Input 2:
 1 2 3 7 -1  
