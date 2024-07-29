@@ -10,17 +10,17 @@ An input string is valid if:
  
 ## Example 1:
 
-**Input**: s = "()"
+**Input**: s = "()"  
 **Output**: true
 
 ## Example 2:
 
-**Input**: s = "()[]{}"
+**Input**: s = "()[]{}"  
 **Output**: true
 
 ## Example 3:
 
-**Input**: s = "(]"
+**Input**: s = "(]"  
 **Output**: false
 
 ## Constraints:
@@ -28,6 +28,12 @@ An input string is valid if:
 - 1 <= s.length <= 104
 - s consists of parentheses only '()[]{}'.
 
-## Hint 1
-## Hint 2
-## Hint 3
+### Hint 1
+Use a stack of characters.
+
+### Hint 2
+When you encounter an opening bracket, push it to the top of the stack.
+
+### Hint 3
+When you encounter a closing bracket, check if the top of the stack was the opening for it. If yes, pop it from the stack. Otherwise, return false.
+
