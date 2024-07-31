@@ -1,3 +1,25 @@
+/*
+* Recursive with memorization:
+
+    Approach and Structure
+    - Uses a top-down approach.
+    - Recursively solves the problem by breaking it down into smaller subproblems and storing the results to avoid redundant calculations.
+    - Starts with the initial problem and recursively solves smaller subproblems, using memorization to cache and reuse previously computed results.
+
+    Implementation Details
+    - Memoization Table: Uses a memoization table (dp[i]) to store results of subproblems where dp[i] represents the minimum height needed starting from index i.
+    - Recursive Calls: The function helper is called recursively to compute the minimum height for remaining books, and memoization is used to cache results of previously solved subproblems.
+    - Complexity: Time complexity can be similar to the iterative approach, but it depends on the number of unique subproblems that need to be solved. Memoization helps in reducing redundant calculations
+    
+    Flexibility and Usage
+    - Recursive Approach: Can be more intuitive for problems that naturally fit a recursive decomposition.
+    - Space Complexity: Includes both the space for the DP table and the recursive call stack, which could be significant for deep recursion.
+    
+    Summary
+    - Solves the problem using recursion and caches intermediate results.
+    - Can be more intuitive for problems that decompose naturally into recursive subproblems.
+*/
+
 class Solution {
 public:
     int minHeightShelves(vector<vector<int>>& books, int shelfWidth) {
