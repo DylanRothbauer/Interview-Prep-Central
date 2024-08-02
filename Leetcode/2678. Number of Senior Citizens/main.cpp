@@ -7,22 +7,17 @@ public:
         // Last two are seat number (index 13-14) of passenger
 
         // Return the number of passengers who are strictly more than 60 years old.
-
         int count = 0;
 
         for (int i = 0; i < details.size(); i++) {
             string x = "";
-
             x += details[i][11];
             x += details[i][12];
-
             int age = stoi(x);
-
             if (age > 60) {
                 count++;
             }
         }
         return count;
     }
-
 };
