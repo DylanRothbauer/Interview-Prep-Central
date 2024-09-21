@@ -1,16 +1,33 @@
-# Technical Interview Preparation Repository
-## Overview
-Welcome to my technical interview preparation repository! This repository is designed to help me prepare for software engineering technical interviews by providing a broad collection of problems and resources from various sources. The next few years, I will gather a collection of problems and resources to enhance my coding skills and prepare for technical interviews. Whether you're new to coding interviews or looking to refine your skills, this repository aims to support your journey with organized and structured content.
+# 🖥️ Technical Interview Preparation Repository
 
-## Repository Structure
-This repository is organized into folders to help you navigate and find the resources you need:
+## 📚 Overview
 
-- Cracking the Coding Interview: Contains problems and solutions from the book "Cracking the Coding Interview" by Gayle Laakmann McDowell.
-- LeetCode: Includes a wide range of problems from LeetCode.
-- AlgoExpert: Features problems and solutions from the AlgoExpert platform, covering a variety of topics.
-- Competitions: Contains problems from coding competitions such as icpc and more, along with my solutions.
-- CodeChef: Includes problems and solutions from CodeChef, a competitive programming platform known for its contests and practice problems.
-- HackerRank: Features problems and solutions from HackerRank, a platform for practicing coding challenges and competitions.
-- Naukri (Code360): Features problems from Naukri by codingninjas. Includes problems, resources, interview prep, and solutions. 
-- Other Resources: Includes additional resources, such as articles, videos, and cheat sheets, to supplement your preparation.
+Welcome to **my technical interview preparation repository**! This repository is designed to help me prepare for **software engineering technical interviews** by providing a broad collection of problems and resources from various sources. Over the next few years, I will gather a curated collection to **enhance my coding skills** and be fully prepared for technical interviews. Whether you're new to coding interviews or aiming to refine your skills, this repository is here to support your journey with **organized and structured content**.
 
+## 🗂️ Repository Structure
+
+This repository is organized into folders for easy navigation and to help you find the resources you need:
+
+- **Cracking the Coding Interview**:  
+  Contains problems and solutions from the book _Cracking the Coding Interview_ by **Gayle Laakmann McDowell**.
+  
+- **LeetCode**:  
+  A wide range of problems from **LeetCode**, organized by difficulty and topic.
+  
+- **AlgoExpert**:  
+  Features problems and solutions from the **AlgoExpert** platform, covering topics like **data structures, algorithms, and system design**.
+  
+- **Competitions**:  
+  Includes problems from coding competitions such as **ICPC**, along with my solutions.
+  
+- **CodeChef**:  
+  Problems and solutions from **CodeChef**, a competitive programming platform known for its coding contests and practice problems.
+  
+- **HackerRank**:  
+  Features coding challenges and solutions from **HackerRank**, a platform for practicing technical problems and competitions.
+  
+- **Naukri (Code360)**:  
+  Problems and solutions from **Naukri by Coding Ninjas**. This section includes **interview prep** resources and solutions.
+
+- **Other Resources**:  
+  A collection of **articles, videos, cheat sheets, and additional resources** to supplement your interview preparation.
