@@ -15,6 +15,8 @@ Return the **maximum amount of water** the container can store.
 ---
 
 ## Example 1  
+![water](https://github.com/user-attachments/assets/aa686af1-f628-471d-b70e-d3911510bc23)
+
 **Input:**  
 height = [1,8,6,2,5,4,8,3,7]  
   
