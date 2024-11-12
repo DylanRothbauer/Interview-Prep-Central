@@ -33,3 +33,6 @@ Your score is the number of clients who will buy your pizza based on the selecte
 
 **Output:**  
 4 cheese mushrooms tomatoes peppers
+
+### Additional Details
+For more details about the problem statement, please refer to the [Hash Code 2022 Practice Problem file](hashcode_2022_practice_round.pdf) included in this repository.
