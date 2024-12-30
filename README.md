@@ -22,7 +22,10 @@ This repository is organized into folders for easy navigation and to help you fi
   
 - **CodeChef**:  
   Problems and solutions from **CodeChef**, a competitive programming platform known for its coding contests and practice problems.
-  
+
+- **Codeforces**:  
+  Problems and solutions from **Codeforces**, a platform for competitive programming known for its **wide variety of problem topics and difficulty levels**.
+
 - **HackerRank**:  
   Features coding challenges and solutions from **HackerRank**, a platform for practicing technical problems and competitions.
   
@@ -31,3 +34,12 @@ This repository is organized into folders for easy navigation and to help you fi
 
 - **Other Resources**:  
   A collection of **articles, videos, cheat sheets, and additional resources** to supplement your interview preparation.
+
+---
+
+## ✨ How to Use
+1. Navigate to the folder corresponding to the platform or resource you want to explore.
+2. Solve problems and compare your solutions with those provided.
+3. Use the categorized topics to identify areas for improvement.
+
+Happy coding! 🚀
