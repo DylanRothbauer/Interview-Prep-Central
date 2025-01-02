@@ -9,6 +9,6 @@ Welcome to the **Codeforces Solutions** section of my **Technical Interview Prep
 This section is dedicated to:
 - **Coding Practice:** Solving problems to enhance my understanding of algorithms and data structures.
 - **Contest Participation:** Archiving solutions from **live contests** and **virtual contests**.
-- **Learning and Growth:** Analyzing mistakes and learning from them to improve coding proficiency.
+- **Learning and Growth:** Analyzing mistakes and learning from them to improve coding proficiency. Also taking this opportunity to better my knowledge with Java syntax.
 
 ---
