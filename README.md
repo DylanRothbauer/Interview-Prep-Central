@@ -32,6 +32,9 @@ This repository is organized into folders for easy navigation and to help you fi
 - **Naukri (Code360)**:  
   Problems and solutions from **Naukri by Coding Ninjas**. This section includes **interview prep** resources and solutions.
 
+- **NeetCode**:  
+  Covers problems from **NeetCode**, a resource focused on systematic problem-solving and data structures/algorithms mastery.
+
 - **Other Resources**:  
   A collection of **articles, videos, cheat sheets, and additional resources** to supplement your interview preparation.
 
