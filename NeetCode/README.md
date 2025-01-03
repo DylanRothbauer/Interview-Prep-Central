@@ -47,7 +47,7 @@ Special thanks to [Navi](https://neetcode.io/) for making this amazing resource 
 
 ## 🙌 Acknowledgments
 
-This repository is inspired by the incredible work of [TheNeetCode](https://neetcode.io/). Full credit goes to the creator for curating such an effective learning platform. Please support the creator by visiting [NeetCode.io](https://neetcode.io/) and exploring their content.
+This repository is inspired by the incredible work of [Navi](https://neetcode.io/). Full credit goes to the creator for curating such an effective learning platform. Please support the creator by visiting [NeetCode.io](https://neetcode.io/) and exploring their content.
 
 ---
 
