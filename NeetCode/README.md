@@ -32,7 +32,7 @@ A structured **step-by-step guide** for tackling coding problems by progressivel
 - Clear and concise explanations  
 - Structured learning paths  
 
-Special thanks to [TheNeetCode](https://neetcode.io/) for making this amazing resource available to everyone!
+Special thanks to [Navi](https://neetcode.io/) for making this amazing resource available to everyone!
 
 ---
 
