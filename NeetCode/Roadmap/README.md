@@ -12,7 +12,7 @@ Whether you are a beginner or brushing up on your skills, this roadmap will help
 
 The folders in this section are organized alphabetically for convenience, but the **recommended progression** is visualized below. This roadmap represents the ideal sequence for working through the topics:
 
-![NeetCode Roadmap](./NeetcodeRoadmap.png)
+<img width="793" alt="NeetcodeRoadmap" src="https://github.com/user-attachments/assets/97ef9cb9-5188-4a52-a88b-391e563c2e9b" />
 
 The roadmap is designed to help you progress systematically, starting with **fundamentals** and moving towards **advanced problem-solving techniques**. Here's a breakdown of the topics:
 
@@ -77,9 +77,5 @@ The roadmap is designed to help you progress systematically, starting with **fun
 4. **Iterate**: Revisit topics to strengthen weaker areas or learn new approaches.
 
 ---
-
-## 🛠️ Contributing
-
-If you have suggestions or improvements for this roadmap, feel free to create a pull request or submit an issue.
 
 Happy coding! 🚀
