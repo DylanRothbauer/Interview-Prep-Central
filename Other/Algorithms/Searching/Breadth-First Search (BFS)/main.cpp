@@ -17,8 +17,8 @@ void BFS(const vector<vector<int>>& adj, int start) {
         q.pop();
         cout << "Visited: " << node << endl;
 
-        for (int neighbor : adj[node]) {
-            if (!visited[neighbor]) {
+        for (int neighbor : adj[node]) { // Loop through its adjacent nodes
+            if (!visited[neighbor]) { // If not visited, add to visited and push to queue
                 visited[neighbor] = true;
                 q.push(neighbor);
             }
