@@ -40,5 +40,3 @@ Dijkstra’s Algorithm follows a **greedy approach** and works as follows:
 🔹 **Common Applications:** GPS Navigation, Internet Routing, Game AI Pathfinding.
 
 ---
-
-🚀 **Want to see an example implementation?** Check out the [C++ Code](#).  
