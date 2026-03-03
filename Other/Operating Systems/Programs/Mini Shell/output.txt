@@ -1,0 +1,313 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <unistd.h>
+#include <sys/wait.h> 
+#include <fcntl.h>
+
+using namespace std;
+
+// Global variables
+const string HISTORY_FILE = "history.txt";
+vector<string> history;
+
+string pwd() {
+    char buffer[1024];
+    getcwd(buffer, sizeof(buffer));
+    return string(buffer);
+}
+
+void loadHistory() {
+    ifstream inFile(HISTORY_FILE);
+    if (!inFile.is_open()) {
+        return;
+    }
+
+    string line;
+    while (getline(inFile, line)) {
+        if (!line.empty()) {
+            history.push_back(line);
+        }
+    }
+    inFile.close();
+}
+
+void printHistory() {
+    if (history.empty()) {
+        cout << "No commands in history.\n";
+        return;
+    }
+    for (size_t i = 0; i < history.size(); i++) {
+        cout << "  " << (i + 1) << "  " << history[i] << "\n";
+    }
+}
+
+void addToHistory(const string& cmd) {
+    if (cmd.empty()) return;
+
+    history.push_back(cmd);
+}
+
+// Clear history file on exit (saves history only for current session)
+void clearHistory() {
+    history.clear();
+    ofstream outFile(HISTORY_FILE, ios::trunc);
+    outFile.close();
+}
+
+vector<string> tokenize(const string& input) {
+    vector<string> tokens;
+    istringstream stream(input);
+    string token;
+    while (stream >> token) {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+
+void runCommand(const vector<string>& tokens) {
+    if (tokens.empty()) return;
+
+    // Null-terminated array of C-strings.
+    vector<char*> argv;
+
+    for (const string& tok : tokens) {
+        argv.push_back(const_cast<char*>(tok.c_str()));
+    }
+    argv.push_back(nullptr);
+
+    pid_t pid = fork();
+
+    if (pid < 0) { // Fork failed
+        perror("fork");
+
+    } else if (pid == 0) { // Child process
+        execvp(argv[0], argv.data());
+        perror(argv[0]);
+        exit(1);
+
+    } else { // Parent process
+        wait(nullptr);
+    }
+}
+
+bool hasRedirection(const vector<string>& tokens) {
+    for (const string& tok : tokens) {
+        if (tok == ">" || tok == "<") {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool hasPipe(const string& input) {
+    return input.find('|') != string::npos;
+}
+
+void runWithRedirection(const vector<string>& tokens) {
+    int  inOpIndex  = -1;   // index of "<"
+    int  outOpIndex = -1;   // index of ">"
+
+    for (int i = 0; i < (int)tokens.size(); i++) {
+        if (tokens[i] == "<") {
+            inOpIndex  = i;
+        } 
+        if (tokens[i] == ">") {
+            outOpIndex = i;
+        }
+    }
+
+    // cmdTokens — everything that isn't an operator or filename
+    // Filenames sit at opIndex+1, so skip those too
+    vector<string> cmdTokens;
+    for (int i = 0; i < (int)tokens.size(); i++) {
+        if (tokens[i] == "<" || tokens[i] == ">") {
+            i++;  // skip the filename token
+            continue;
+        }
+        cmdTokens.push_back(tokens[i]);
+    }
+
+    if (cmdTokens.empty()) {
+        cerr << "Error: no command found.\n";
+        return;
+    }
+
+    // Quick validation
+    if (inOpIndex  != -1 && inOpIndex  + 1 >= (int)tokens.size()) {
+        cerr << "Error: missing filename after '<'\n";
+        return;
+    }
+    if (outOpIndex != -1 && outOpIndex + 1 >= (int)tokens.size()) {
+        cerr << "Error: missing filename after '>'\n"; 
+        return;
+    }
+
+    string inFile, outFile;
+
+    if (inOpIndex != -1) {
+        inFile = tokens[inOpIndex + 1];
+    } else {
+        inFile = "";
+    }
+    
+    if (outOpIndex != -1) {
+        outFile = tokens[outOpIndex + 1];
+    } else {
+        outFile = "";
+    }
+
+    vector<char*> argv;
+    for (const string& tok : cmdTokens) {
+        argv.push_back(const_cast<char*>(tok.c_str()));
+    }
+    argv.push_back(nullptr);
+
+    int origSTDIN  = dup(0);
+    int origSTDOUT = dup(1);
+
+    pid_t pid = fork();
+    if (pid < 0) {
+        perror("fork");
+    } else if (pid == 0) { // Child process
+        if (!inFile.empty()) {
+            int inFd = open(inFile.c_str(), O_RDONLY);
+            if (inFd < 0) { perror(inFile.c_str()); exit(1); }
+            dup2(inFd, STDIN_FILENO);
+            close(inFd);
+        }
+        if (!outFile.empty()) {
+            int outFd = open(outFile.c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0666);
+            if (outFd < 0) { perror(outFile.c_str()); exit(1); }
+            dup2(outFd, STDOUT_FILENO);
+            close(outFd);
+        }
+        execvp(argv[0], argv.data());
+        perror(argv[0]);
+        exit(1);
+    } else {
+        wait(nullptr);
+        fflush(stdout);
+        dup2(origSTDIN,  0);
+        dup2(origSTDOUT, 1);
+        close(origSTDIN);
+        close(origSTDOUT);
+        fflush(stdout);
+    }
+}
+
+void runWithPipe(const string& left, const string& right) {
+    vector<string> leftTokens  = tokenize(left);
+    vector<string> rightTokens = tokenize(right);
+
+    if (leftTokens.empty() || rightTokens.empty()) {
+        cout << "Error: missing command on one side of '|'\n";
+        return;
+    }
+
+    // Build argv arrays for both commands
+    vector<char*> argvLeft, argvRight;
+
+    for (const string& tok : leftTokens) {
+        argvLeft.push_back(const_cast<char*>(tok.c_str()));
+    }
+    for (const string& tok : rightTokens) {
+        argvRight.push_back(const_cast<char*>(tok.c_str()));
+    }
+
+    argvLeft.push_back(nullptr);
+    argvRight.push_back(nullptr);
+
+    // Create the pipe
+    // fd[0] = read end   (cmd2 reads from here)
+    // fd[1] = write end  (cmd1 writes to here)
+    int fd[2];
+    if (pipe(fd) < 0) {
+        perror("pipe");
+        return;
+    }
+
+    // Fork (child 1 | left side of pipe)
+    pid_t pid1 = fork();
+    if (pid1 < 0) {
+        perror("fork");
+        return;
+    }
+
+    if (pid1 == 0) { // Child 1
+        dup2(fd[1], 1);
+
+        close(fd[0]);
+        close(fd[1]);
+
+        execvp(argvLeft[0], argvLeft.data());
+        perror(argvLeft[0]);
+        exit(1);
+    }
+
+    // Fork (child 2 | right side of pipe)
+    pid_t pid2 = fork();
+    if (pid2 < 0) {
+        perror("fork");
+        return;
+    }
+
+    if (pid2 == 0) { // Child 2
+        dup2(fd[0], 0);
+
+        close(fd[0]);
+        close(fd[1]);
+
+        execvp(argvRight[0], argvRight.data());
+        perror(argvRight[0]);
+        exit(1);
+    }
+
+    close(fd[0]);
+    close(fd[1]);
+
+    // Wait for both children to finish
+    waitpid(pid1, nullptr, 0);
+    waitpid(pid2, nullptr, 0);
+}
+
+int main() {
+    loadHistory();
+
+    while(true) {
+        cout << pwd() << " :~$ ";
+        cout.flush();
+
+        string command;
+        getline(cin, command);
+
+        if (command == "exit") {
+            clearHistory();
+            break;
+        } else if (command == "pwd") {
+            cout << pwd() << endl;
+        } else if (command == "history") {
+            printHistory();
+        } else if (hasPipe(command)) {
+            size_t pipePos = command.find('|');
+            string leftCmd = command.substr(0, pipePos);
+            string rightCmd = command.substr(pipePos + 1);
+            runWithPipe(leftCmd, rightCmd);
+        } else {
+            vector<string> tokens = tokenize(command);
+            if (!tokens.empty()) {
+                if (hasRedirection(tokens)) {
+                    runWithRedirection(tokens);
+                } else {
+                    runCommand(tokens);
+                }
+            }
+        }
+
+        addToHistory(command);
+    }
+
+    return 0;
+}

@@ -1,0 +1,57 @@
+Script started on 2026-02-03 17:20:52-06:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="30"]
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ ls
+[?2004lstringtokens.cpp  stringtokens.txt  [0m[01;32mstringtokenscpp.txt[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ cat stringtokens.cpp
+[?2004l#include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>
+
+using namespace std;
+
+void getStringTokens(const std::string& sentence, std::vector<std::string>& tokens) {
+    std::stringstream ss(sentence);
+    std::string word;
+    while (ss >> word) {
+        tokens.push_back(word);
+    }
+}
+
+int main() {
+    std::string sentence = "./prog1 | ./prog2 > out.txt";
+    std::vector<std::string> myStringTokens;
+
+    getStringTokens(sentence, myStringTokens);
+
+    // C_String copy
+    char* C_StyleString[myStringTokens.size() + 1];
+    for (size_t i = 0; i < myStringTokens.size(); i++) {
+        C_StyleString[i] = (char*)myStringTokens[i].c_str();
+    }
+    C_StyleString[myStringTokens.size()] = nullptr; // Null-terminate the array
+
+    // Print the C-style strings
+    for (size_t i = 0; i < myStringTokens.size(); i++) {
+        std::cout << C_StyleString[i] << std::endl;
+    }
+
+
+    return 0;
+}
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ ls
+[?2004lstringtokens.cpp  stringtokens.txt  [0m[01;32mstringtokenscpp.txt[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ g++ stringtokens.cpp -o stringtokenscpp.txt
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ ls
+[?2004lstringtokens.cpp  stringtokens.txt  [0m[01;32mstringtokenscpp.txt[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ ./stringtokenscpp.txt
+[?2004l./prog1
+|
+./prog2
+>
+out.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ exit[K[K[K[Kls
+[?2004lstringtokens.cpp  stringtokens.txt  [0m[01;32mstringtokenscpp.txt[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program3[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program3[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-03 17:22:01-06:00 [COMMAND_EXIT_CODE="0"]

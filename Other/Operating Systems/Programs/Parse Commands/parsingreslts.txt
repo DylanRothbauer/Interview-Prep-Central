@@ -1,0 +1,5 @@
+Command 0: No I, No <, No >
+Command 1: I found in position 1, No <, No >
+Command 2: No I, No <, > found in position 1
+Command 3: No I, < found in position 2, No >
+Command 4: No I, No <, No >

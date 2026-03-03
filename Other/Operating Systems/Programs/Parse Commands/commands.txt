@@ -1,0 +1,9 @@
+ls -l
+
+ps | grep alnaeli
+
+./analyzer > analysis.txt
+
+wc -w < inputfile.txt
+
+cat file.txt file2.txt

@@ -1,0 +1,30 @@
+My findings:
+
+When running both C++ and Java both with values between 0-10000 & 0-50, here is what I found:
+
+C++:
+
+0-10000:
+Counting Sort - 4835 milliseconds
+Quick Sort - 19100 milliseconds
+
+0-50:
+Counting Sort - 3565 milliseconds
+Quick Sort - 9072 milliseconds
+
+My observation with quick sort was that it was taking too long that I had to do 3 way partitioning to just get a result.
+
+Java:
+
+0-10000:
+Counting Sort - 332 milliseconds
+Quick Sort - 4155 milliseconds
+
+0-50:
+Counting Sort - 327 milliseconds
+Quick Sort - 1528 milliseconds
+
+My observation with Java and quick sort was I got a stack overflow before doing 3 way partitioning.
+
+
+

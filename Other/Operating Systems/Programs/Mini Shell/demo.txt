@@ -1,0 +1,61 @@
+Script started on 2026-03-03 18:57:47-06:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="120" LINES="30"]
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment4[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment4[00m$ ./shellg++ shell.cpp -o shell
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment4[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment4[00m$ g++ shell.cpp -o shell./shell[K
+[?2004l/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ pwd
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ ls -l
+total 100
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:57 demo.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:55 history.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer  7688 Mar  3 18:34 output.txt
+-rwxr-xr-x 1 dylanrothbauer dylanrothbauer 79320 Mar  3 18:57 shell
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer  8488 Mar  3 18:55 shell.cpp
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ echo Hellow    World!
+Hello World!
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ history
+  1  pwd
+  2  ls -l
+  3  echo Hello World!
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ echo    ls -l > dirlist.txt
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ cat dirlist.txt
+total 100
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:57 demo.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:58 dirlist.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:55 history.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer  7688 Mar  3 18:34 output.txt
+-rwxr-xr-x 1 dylanrothbauer dylanrothbauer 79320 Mar  3 18:57 shell
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer  8488 Mar  3 18:55 shell.cpp
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ echo "Hello from shell" > test.txt
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ cat < test.txt
+"Hello from shell"
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ cat < test.txt > test2.txt
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ cat test2.txt
+"Hello from shell"
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ ls | grep .cpp
+shell.cpp
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ ls | grp ep .cpp | sort                     cat c shell.cpp | grep void | sort
+void addToHistory(const string& cmd) {
+void clearHistory() {
+void loadHistory() {
+void printHistory() {
+void runCommand(const vector<string>& tokens) {
+void runWithPipe(const string& input) {
+void runWithRedirection(const vector<string>& tokens) {
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ history
+  1  pwd
+  2  ls -l
+  3  echo Hello World!
+  4  history
+  5  ls -l > dirlist.txt
+  6  cat dirlist.txt
+  7  echo "Hello from shell" > test.txt
+  8  cat < test.txt
+  9  cat < test.txt > test2.txt
+  10  cat test2.txt
+  11  ls | grep .cpp
+  12  cat shell.cpp | grep void | sort
+/home/dylanrothbauer/CS442_003_Spring2026/Assignment4 :~$ exit
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment4[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment4[00m$ exit
+[?2004lexit
+
+Script done on 2026-03-03 19:01:04-06:00 [COMMAND_EXIT_CODE="0"]

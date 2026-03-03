@@ -1,0 +1,7 @@
+total 100
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:57 demo.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:58 dirlist.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer     0 Mar  3 18:55 history.txt
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer  7688 Mar  3 18:34 output.txt
+-rwxr-xr-x 1 dylanrothbauer dylanrothbauer 79320 Mar  3 18:57 shell
+-rw-r--r-- 1 dylanrothbauer dylanrothbauer  8488 Mar  3 18:55 shell.cpp

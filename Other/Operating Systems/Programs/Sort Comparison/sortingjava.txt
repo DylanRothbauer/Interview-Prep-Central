@@ -1,0 +1,97 @@
+Script started on 2026-02-02 16:23:06-06:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="124" LINES="29"]
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ ls
+[?2004lsorting.class  sorting.cpp  sorting.java  [0m[01;32msortingc++[0m  sortingc++.txt  sortingjava.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ lsexit./sortingc++g++ sorting.cpp -o sortingc++ls[K./sortingc++ls[Kg++ sorting.cpp -o sortingc++[17P./sortingc++[8Pexit[2Pls[Kjava[Kac *.java
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ cat java[K[K[K[Ksorting.java
+[?2004limport java.util.*;
+
+public class sorting {
+
+    public static void countingSort(int[] arr) {
+        int max = Arrays.stream(arr).max().orElse(0);
+        int min = Arrays.stream(arr).min().orElse(0);
+        int range = max - min + 1;
+
+        int[] count = new int[range];
+        for (int num : arr) {
+            count[num - min]++;
+        }
+
+        int index = 0;
+        for (int i = 0; i < range; i++) {
+            while (count[i] > 0) {
+                arr[index++] = i + min;
+                count[i]--;
+            }
+        }
+    }
+
+    // 3-way partition quicksort
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low >= high) return;
+
+        // Choose a random pivot to avoid worst-case
+        int pivotIndex = low + new Random().nextInt(high - low + 1);
+        int pivot = arr[pivotIndex];
+
+        int lt = low;    // arr[low..lt-1] < pivot
+        int i  = low;    // arr[lt..i-1] == pivot
+        int gt = high;   // arr[gt+1..high] > pivot
+
+        while (i <= gt) {
+            if (arr[i] < pivot) {
+                int tmp = arr[lt]; arr[lt] = arr[i]; arr[i] = tmp;
+                lt++; i++;
+            } else if (arr[i] > pivot) {
+                int tmp = arr[i]; arr[i] = arr[gt]; arr[gt] = tmp;
+                gt--;
+            } else { // arr[i] == pivot
+                i++;
+            }
+        }
+
+        quickSort(arr, low, lt - 1);
+        quickSort(arr, gt + 1, high);
+    }
+
+    public static void main(String[] args) {
+        final int SIZE = 100000000;
+        int[] arr = new int[SIZE];
+        Random rand = new Random();
+        for (int i = 0; i < SIZE; i++) {
+            arr[i] = rand.nextInt(10001);
+        }
+
+        // Counting Sort
+        long startTime = System.currentTimeMillis();
+        countingSort(arr);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Counting Sort took: " + (endTime - startTime) + " ms");
+
+        // Refill array for quicksort test
+        for (int i = 0; i < SIZE; i++) {
+            arr[i] = rand.nextInt(10001);
+        }
+
+        // Quick Sort
+        long startTimeQS = System.currentTimeMillis();
+        quickSort(arr, 0, arr.length - 1);
+        long endTimeQS = System.currentTimeMillis();
+        System.out.println("Quick Sort took: " + (endTimeQS - startTimeQS) + " ms");
+    }
+}
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ j[Kls
+[?2004lsorting.class  sorting.cpp  sorting.java  [0m[01;32msortingc++[0m  sortingc++.txt  sortingjava.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ java.[K sorting
+[?2004lCounting Sort took: 332 ms
+Quick Sort took: 4155 ms
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ ls
+[?2004lsorting.class  sorting.cpp  sorting.java  [0m[01;32msortingc++[0m  sortingc++.txt  sortingjava.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ lsjava sortingls[Kcat sorting.java[4Pjavac *.java
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ javac *.javals[Kjavac *.javals[Kjava sorting
+[?2004lCounting Sort took: 327 ms
+Quick Sort took: 1528 ms
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program1[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program1[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-02 16:25:04-06:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,65 @@
+Script started on 2026-02-02 17:07:30-06:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="124" LINES="29"]
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ls
+[?2004lsubstring.c  substring.cpp  substring.txt  [0m[01;32msubstringc[0m  [01;32msubstringcpp[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ g[Kcat subsr[Ktring.cpp
+[?2004l#include <iostream>
+
+using namespace std;
+
+void isSubstring(const string &str1, const string &str2) {
+    if (str1.find(str2) != string::npos) {
+        cout << "FOUND"<< endl;
+    } else {
+        cout << "NOT FOUND" << endl;
+    }
+}
+
+int main() {
+    isSubstring("We like UW-Stout", "UW-Stout");
+    isSubstring("We like UW-Stout", "UW-Madison");
+    isSubstring("myEXEprogram >txt", ">");
+
+    return 0;
+}[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ g++ substring.cpp -o substringcpp
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ls
+[?2004lsubstring.c  substring.cpp  substring.txt  [0m[01;32msubstringc[0m  [01;32msubstringcpp[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ./substringcpp
+[?2004lFOUND
+NOT FOUND
+FOUND
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ls
+[?2004lsubstring.c  substring.cpp  substring.txt  [0m[01;32msubstringc[0m  [01;32msubstringcpp[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ cat substring.c
+[?2004l#include <stdio.h>
+#include <string.h>
+
+void isSubstring(const char *str1, const char *str2) {
+    if (strstr(str1, str2) != NULL) {
+        printf("FOUND\n");
+    } else {
+        printf("NOT FOUND\n");
+    }
+}
+
+int main() {
+    isSubstring("We like UW-Stout", "UW-Stout");
+    isSubstring("We like UW-Stout", "UW-Madison");
+    isSubstring("myEXEprogram >txt", ">");
+
+    return 0;
+}
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ls
+[?2004lsubstring.c  substring.cpp  substring.txt  [0m[01;32msubstringc[0m  [01;32msubstringcpp[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ c[Kgcc substring.c -o substringc
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ls
+[?2004lsubstring.c  substring.cpp  substring.txt  [0m[01;32msubstringc[0m  [01;32msubstringcpp[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ./substringc
+[?2004lFOUND
+NOT FOUND
+FOUND
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ ls
+[?2004lsubstring.c  substring.cpp  substring.txt  [0m[01;32msubstringc[0m  [01;32msubstringcpp[0m
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment1/Program2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment1/Program2[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-02 17:09:05-06:00 [COMMAND_EXIT_CODE="0"]

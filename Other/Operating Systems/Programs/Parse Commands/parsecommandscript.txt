@@ -1,0 +1,124 @@
+Script started on 2026-02-12 11:52:05-06:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ ls
+[?2004lParseCommand.cpp  commands.txt  [0m[01;32mparse[0m  parsecommandscript.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ cat ParseCommand.cpp [K
+[?2004l#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+vector<string> tokenize(const string& line) {
+    vector<string> tokens;
+    stringstream ss(line);
+    string temp;
+
+    while (ss >> temp)
+        tokens.push_back(temp);
+
+    return tokens;
+}
+
+int findOperator(const vector<string>& tokens, const string& op) {
+    for (int i = 0; i < tokens.size(); i++) {
+        if (tokens[i] == op)
+            return i;
+    }
+    return -1;
+}
+
+void parseCommand(const vector<string>& tokens, ofstream& out, int index) {
+
+    int pipePos = findOperator(tokens, "|");
+    int inPos = findOperator(tokens, "<");
+    int outPos = findOperator(tokens, ">");
+
+    out << "Command " << index << ": ";
+
+    // Pipe |
+    if (pipePos != -1)
+        out << "I found in position " << pipePos;
+    else
+        out << "No I";
+
+    out << ", ";
+
+    // Input <
+    if (inPos != -1)
+        out << "< found in position " << inPos;
+    else
+        out << "No <";
+
+    out << ", ";
+
+    // Output >
+    if (outPos != -1)
+        out << "> found in position " << outPos;
+    else
+        out << "No >";
+
+    out << endl;
+}
+
+int main() {
+
+    ifstream inFile("commands.txt");
+    ofstream outFile("parsingreslts.txt");
+
+    if (!inFile) {
+        cout << "Error opening commands.txt\n";
+        return 1;
+    }
+
+    string line;
+    int commandIndex = 0;
+
+    while (getline(inFile, line)) {
+
+        if (line.empty())
+            continue;
+
+        vector<string> tokens = tokenize(line);
+
+        parseCommand(tokens, outFile, commandIndex);
+
+        commandIndex++;
+    }
+
+    inFile.close();
+    outFile.close();
+
+    return 0;
+}
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ ls
+[?2004lParseCommand.cpp  commands.txt  [0m[01;32mparse[0m  parsecommandscript.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ cat commands.txt [K
+[?2004lls -l
+
+ps | grep alnaeli
+
+./analyzer > analysis.txt
+
+wc -w < inputfile.txt
+
+cat file.txt file2.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ g++ ParseCommand.cpp [K -o parse
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ ls
+[?2004lParseCommand.cpp  commands.txt  [0m[01;32mparse[0m  parsecommandscript.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ ./parse[K[Kse [K
+[?2004l[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ ls
+[?2004lParseCommand.cpp  commands.txt  [0m[01;32mparse[0m  parsecommandscript.txt  parsingreslts.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ cat parsingreslts.txt [K
+[?2004lCommand 0: No I, No <, No >
+Command 1: I found in position 1, No <, No >
+Command 2: No I, No <, > found in position 1
+Command 3: No I, < found in position 2, No >
+Command 4: No I, No <, No >
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ ls
+[?2004lParseCommand.cpp  commands.txt  [0m[01;32mparse[0m  parsecommandscript.txt  parsingreslts.txt
+[?2004h]0;dylanrothbauer@eStout-G41908X6: ~/CS442_003_Spring2026/Assignment2[01;32mdylanrothbauer@eStout-G41908X6[00m:[01;34m~/CS442_003_Spring2026/Assignment2[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-12 11:53:00-06:00 [COMMAND_EXIT_CODE="0"]

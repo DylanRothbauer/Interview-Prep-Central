@@ -1,0 +1,42 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1  21864 12632 ?        Ss   Feb26   0:41 /sbin/init
+root         2  0.0  0.0   3120  2048 ?        Sl   Feb26   0:00 /init
+root         6  0.0  0.0   3176  2288 ?        Sl   Feb26   0:55 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root        52  0.2  0.1  66840 15344 ?        S<s  Feb26   4:20 /usr/lib/systemd/systemd-journald
+root       100  0.0  0.0  25272  6272 ?        Ss   Feb26   0:07 /usr/lib/systemd/systemd-udevd
+systemd+   172  0.0  0.1  21456 12800 ?        Ss   Feb26   0:03 /usr/lib/systemd/systemd-resolved
+systemd+   176  0.0  0.0  91024  7680 ?        Ssl  Feb26   0:08 /usr/lib/systemd/systemd-timesyncd
+root       185  0.0  0.0   4236  2560 ?        Ss   Feb26   0:01 /usr/sbin/cron -f -P
+message+   186  0.0  0.0   9664  4992 ?        Ss   Feb26   0:11 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       193  0.0  0.1  18168  8320 ?        Ss   Feb26   0:04 /usr/lib/systemd/systemd-logind
+root       195  0.0  0.1 2126484 14428 ?       Ssl  Feb26   0:14 /usr/libexec/wsl-pro-service -vv
+root       201  0.0  0.0   3160  2048 ?        Ss   Feb26   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 vt220
+syslog     214  0.0  0.0 222508  5504 ?        Ssl  Feb26   0:04 /usr/sbin/rsyslogd -n -iNONE
+root       218  0.0  0.0   3116  1920 tty1     Ss+  Feb26   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root       228  0.0  0.2 107024 22656 ?        Ssl  Feb26   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root       317  0.0  0.0   6660  4480 pts/1    Ss   Feb26   0:00 /bin/login -f
+dylanro+   363  0.0  0.1  20308 11136 ?        Ss   Feb26   0:03 /usr/lib/systemd/systemd --user
+dylanro+   364  0.0  0.0  21152  3516 ?        S    Feb26   0:00 (sd-pam)
+dylanro+   388  0.0  0.0   6072  4992 pts/1    S+   Feb26   0:00 -bash
+polkitd   1147  0.0  0.1 308164  7808 ?        Ssl  Feb26   0:00 /usr/lib/polkit-1/polkitd --no-debug
+root      7550  0.0  0.4  66852 32748 ?        Ss   Feb26   0:19 /usr/bin/python3 /usr/lib/ubuntu-advantage/esm_cache.py
+_apt      7563  0.0  0.1  20196  9088 ?        S    Feb26   0:00 /usr/lib/apt/methods/https
+root      7903  0.0  0.0   3128   908 ?        Ss   Feb26   0:00 /init
+root      7905  0.0  0.0   3140  1168 ?        S    Feb26   0:00 /init
+dylanro+  7907  0.0  0.0   2800  1664 pts/3    Ss+  Feb26   0:00 sh
+root      7918  0.0  0.0   6668  4096 pts/4    Ss   Feb26   0:00 /bin/login -f
+root      7967  0.0  0.1  20412 11392 ?        Ss   Feb26   0:02 /usr/lib/systemd/systemd --user
+root      7969  0.0  0.0  21160  3512 ?        S    Feb26   0:00 (sd-pam)
+root      7993  0.0  0.0   6072  5120 pts/4    S+   Feb26   0:00 -bash
+root      8140  0.0  0.0   3144  1172 ?        S    Feb26   0:00 /init
+root      8141  0.0  0.3 1253044 25860 pts/2   Ssl+ Feb26   0:13 /mnt/wsl/docker-desktop/docker-desktop-user-distro proxy --distro-name Ubuntu-24.04 --docker-desktop-root /mnt/wsl/docker-desktop C:\Program Files\Docker\Docker\resources
+root     15003  0.0  0.0   3136   908 ?        Ss   09:29   0:00 /init
+root     15004  0.0  0.0   3136  1172 ?        S    09:29   0:00 /init
+dylanro+ 15005  0.0  0.0   2800  1664 pts/5    Ss+  09:29   0:00 /bin/sh -c cd '/home/dylanrothbauer' && /bin/sh
+dylanro+ 15006  0.0  0.0   2800  1792 pts/5    S+   09:29   0:00 /bin/sh
+dylanro+ 15017  0.0  0.6 1014056 53140 pts/5   Sl+  09:29   0:00 /home/dylanrothbauer/.vscode-remote-containers/bin/591199df409fbf59b4b52d5ad4ee0470152a9b31/node /home/dylanrothbauer/.vscode-remote-containers/dist/vscode-remote-containers-server-0.442.0.js
+root     17572  0.0  0.0   3124   908 ?        Ss   16:09   0:00 /init
+root     17573  0.0  0.0   3140  1040 ?        S    16:09   0:00 /init
+dylanro+ 17577  0.1  0.0   6204  5248 pts/0    Ss   16:09   0:00 -bash
+dylanro+ 17642  0.0  0.0   6372  3584 pts/0    S+   16:11   0:00 ./minishell
+dylanro+ 17643  100  0.0   9580  4864 pts/0    R+   16:11   0:00 ps -aux
